@@ -18,8 +18,11 @@ import (
 // "0 9 * * *": Every day at 9:00 AM
 // "0 0 * * 0": Every Sunday at midnight
 func CallMe(message string) {
+	processStart := time.Now()
 	fmt.Println("Calling the function:", message)
 	fmt.Println("Job executed at", time.Now().Format(time.Kitchen))
+	processedElapsed := time.Since(processStart)
+	fmt.Println("PROCESS TIME:", processedElapsed)
 }
 
 func UpdateEverySecond() {
