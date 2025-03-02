@@ -31,7 +31,22 @@ func UpdateEverySecond() {
 
 	// Schedule the task to run every second
 	c.AddFunc("*/10 * * * * *", func() {
+		fmt.Println("---------------------------")
 		CallMe("Every second")
+		fmt.Println("--- LINE RANGE ---")
+		LineRange()
+		fmt.Println("--- SPLIT RANGE ---")
+		SplitRange()
+		fmt.Println("--- SPLIT AFTER RANGE ---")
+		SplitAfterRange()
+		fmt.Println("--- FIELD RANGE ---")
+		FieldSeqRange()
+		fmt.Println("--- RANDOM TEXT ---")
+		GenerateRandomText()
+		fmt.Println("--- TYPE DEFINITION ---")
+		fmt.Println(Age.Valid(200))
+		fmt.Println("--- CHECK TIME ---")
+		CheckTime()
 	})
 
 	// Start the cron scheduler
